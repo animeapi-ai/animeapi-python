@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "animeapi"
+name = "animeapi-sdk"
 dynamic = ["version"]
 description = "Official AnimeAPI SDK: anime image generation from $0.003 per image, plus anime video. Sync and async clients."
 readme = "README.md"

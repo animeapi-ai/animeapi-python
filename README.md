@@ -5,8 +5,10 @@ Official SDK for [AnimeAPI](https://animeapi.ai): anime image generation from **
 Sync and async clients, fully typed, Python 3.9+. One dependency (`httpx`).
 
 ```bash
-pip install animeapi
+pip install animeapi-sdk
 ```
+
+The package is `animeapi-sdk` on PyPI; you import it as `animeapi`.
 
 ## Quick start
 

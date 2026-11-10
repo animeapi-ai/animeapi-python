@@ -42,7 +42,6 @@ image = client.images.generate(
     model="anime",            # "anime" | "ultra" | "ultra-max"
     orientation="landscape",  # "portrait" (default) | "square" | "landscape"
     enhance=True,             # anime model: rewrite the prompt into tags (default true)
-    allow_nsfw=False,         # anime model: API default is true; send False for anything shown publicly
 )
 
 image.image_url           # https://animeapi.ai/cdn/...
@@ -52,6 +51,8 @@ image.generation_time_ms  # about 4 s on anime, about 11 s on ultra
 ```
 
 `client.generate("a prompt")` is a shortcut with the defaults.
+
+AnimeAPI does not generate adult content. Explicit prompts are refused and not charged.
 
 ### Keeping the image
 

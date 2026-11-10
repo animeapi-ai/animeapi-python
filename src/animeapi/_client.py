@@ -148,8 +148,8 @@ def _image_body(
         body["orientation"] = orientation
     if enhance is not None:
         body["enhance"] = enhance
-    if allow_nsfw is not None:
-        body["allowNSFW"] = allow_nsfw
+    # allow_nsfw is deprecated and ignored by the API (adult output is not available); it is not sent.
+    del allow_nsfw
     return body
 
 
@@ -353,8 +353,8 @@ class Images:
             model: ``anime`` (default, $0.003 per image), ``ultra`` ($0.01) or ``ultra-max`` ($0.02).
             orientation: ``portrait`` (default), ``square`` or ``landscape``.
             enhance: ``anime`` model only: rewrite the prompt into tags first. Default true.
-            allow_nsfw: ``anime`` model only: whether adult output is allowed. The API default is true;
-                send False for anything shown publicly.
+            allow_nsfw: Deprecated. Ignored by the API; adult output is not available.
+                Kept so existing code keeps working.
         """
         raw = self._client.request(
             "POST",

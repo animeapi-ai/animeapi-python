@@ -44,7 +44,7 @@ image = client.images.generate(
     enhance=True,             # anime model: rewrite the prompt into tags (default true)
 )
 
-image.image_url           # https://animeapi.ai/cdn/...
+image.image_url           # https://animeapi.ai/i/….webp
 image.enhanced_prompt     # what the model actually received
 image.balance_usd         # balance after this charge
 image.generation_time_ms  # about 4 s on anime, about 11 s on ultra

@@ -13,7 +13,7 @@ VideoStatus = Literal["processing", "succeeded", "failed"]
 
 @dataclass(frozen=True)
 class GeneratedImage:
-    #: Temporary URL on animeapi.ai/cdn. Download the image if you need to keep it.
+    #: Temporary URL of the form https://animeapi.ai/i/<id>.<ext>. Download the image if you need to keep it.
     image_url: str
     #: What the model actually received.
     enhanced_prompt: str

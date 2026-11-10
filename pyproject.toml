@@ -1,0 +1,58 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "animeapi"
+dynamic = ["version"]
+description = "Official AnimeAPI SDK: anime image generation from $0.003 per image, plus anime video. Sync and async clients."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.9"
+authors = [{ name = "AnimeAPI", email = "contact@animeapi.ai" }]
+keywords = ["anime", "image-generation", "ai", "api", "sdk", "animeapi", "text-to-image", "text-to-video", "anime-art", "discord-bot"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Topic :: Multimedia :: Graphics",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Typing :: Typed",
+]
+dependencies = ["httpx>=0.23,<1"]
+
+[project.urls]
+Homepage = "https://animeapi.ai"
+Documentation = "https://animeapi.ai/docs"
+Repository = "https://github.com/animeapi-ai/animeapi-python"
+Issues = "https://github.com/animeapi-ai/animeapi-python/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/animeapi"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src", "README.md", "LICENSE", "pyproject.toml"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B"]
+
+[tool.pyright]
+include = ["src"]
+pythonVersion = "3.9"
+typeCheckingMode = "strict"
+
+[tool.hatch.version]
+path = "src/animeapi/_version.py"
